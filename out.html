@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Fiza ❤️</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4); /* soft pink gradient */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  overflow:hidden;
+}
+
+.container {
+  background: rgba(255,255,255,0.1);
+  padding: 30px 20px;
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  font-size:3em;
+  color: #fff;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+}
+
+#msg {
+  font-size:1.8em;
+  margin-top:15px;
+  min-height:50px;
+  color:white;
+  text-shadow: 0 0 5px #fff;
+}
+
+#urdu {
+  margin-top:15px;
+  font-size:1.5em;
+  color: #fff0f5;
+  text-shadow: 0 0 5px #ff69b4;
+}
+
+button {
+  margin-top:25px;
+  padding:12px 30px;
+  border:none;
+  border-radius:50px;
+  background: #ff1493;
+  color:white;
+  font-size:1.2em;
+  cursor:pointer;
+  box-shadow: 0 0 15px rgba(255,105,180,0.7);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,105,180,1);
+}
+
+.heart {
+  position:absolute;
+  font-size:25px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  from {bottom:-50px; opacity:1;}
+  to {bottom:110vh; opacity:0;}
+}
+
+@media screen and (max-width:480px){
+  h1 { font-size:2em; }
+  #msg { font-size:1.2em; }
+  #urdu { font-size:1em; }
+  button { font-size:1em; padding:10px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Fiza ❤️</h1>
+  <div id="msg"></div>
+  <div id="urdu">تم میری زندگی ہو، مجھ سے ناراض نہ رہو 🥺</div>
+  <button onclick="forgive()">Click if you forgive me 💔</button>
+</div>
+
+<script>
+const text="I love you my princess… Please forgive me 😔";
+let i=0;
+const msg=document.getElementById("msg");
+
+function type(){
+ if(i<text.length){
+  msg.innerHTML+=text[i];
+  i++;
+  setTimeout(type,80);
+ }
+}
+type();
+
+function heart(){
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="❤️";
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(20+Math.random()*30)+"px";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),5000);
+}
+setInterval(heart,300);
+
+function forgive(){
+ alert("Thank you Fiza ❤️ I promise I'll never hurt you again.");
+}
+</script>
+
+</body>
+</html>
